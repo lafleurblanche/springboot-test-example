@@ -31,4 +31,18 @@ public class SampleValueControllerTest {
             .andExpect(status().isOk())
             .andExpect(content().string("100"));
     }
+
+    @Test
+    void getJvmField() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/sample-value/jvm-field"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("150"));
+    }
+
+    @Test
+    void getNonJvmField() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/sample-value/non-jvm-field"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("200"));
+    }
 }
