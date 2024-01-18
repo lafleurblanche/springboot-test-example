@@ -45,4 +45,11 @@ public class SampleValueControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("200"));
     }
+
+    @Test
+    void getQuexValueData() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/sample-value/get-quex-value"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("0"));
+    }
 }
