@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.RestController
 class SampleLombokController {
     @GetMapping("/sample-lombok")
     fun sampleLombok(): String {
-        // TODO: エラー表示が消えない
         val lombokObj = SampleModel()
         lombokObj.name = "test"
         val s: String = lombokObj.name
         lombokObj.age = 12
-        val v = lombokObj.getHuman()
-        lombokObj.setHuman(!v)
+        val v = lombokObj.human
+        lombokObj.human = !v
         println(lombokObj)
         return s
     }
